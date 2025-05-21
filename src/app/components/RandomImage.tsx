@@ -36,7 +36,7 @@ export default function RandomImage({ quizData }: Props) {
         });
         const data = await res.json();
         console.log(data);
-        setResult(data.result.output[0].content[0].text);
+        setResult(data.result.content[0].text);
     };
 
     return (

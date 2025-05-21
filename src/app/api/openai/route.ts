@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
             model: "gpt-4o",
             input: req.input
         });
-        return NextResponse.json({ result: response });
+        return NextResponse.json({ result: response.output[0] });
     } catch (error: any) {
         console.error('OpenAI API Error:', error);
         return NextResponse.json({ error: error.message || 'Unknown error' }, { status: 500 });
