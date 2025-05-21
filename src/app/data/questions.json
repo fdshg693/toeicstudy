@@ -1,0 +1,14 @@
+[
+    {
+        "image": "/images/sample01.png",
+        "description": "サンプル画像1の説明"
+    },
+    {
+        "image": "/images/sample02.png",
+        "description": "サンプル画像2の説明"
+    },
+    {
+        "image": "/images/sample03.png",
+        "description": "サンプル画像3の説明"
+    }
+]
