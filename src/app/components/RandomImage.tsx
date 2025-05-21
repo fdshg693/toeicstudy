@@ -28,8 +28,15 @@ export default function RandomImage({ quizData }: Props) {
         setResult("");
     };
 
-    const evaluateAnswer = () => {
-        setResult("正解です！"); // ここでは常に正解としていますが、実際には評価ロジックを追加してください
+    const evaluateAnswer = async () => {
+        const res = await fetch('/api/openai', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ input: "what is 1+1?" }),
+        });
+        const data = await res.json();
+        console.log(data);
+        setResult(data.result.output[0].content[0].text);
     };
 
     return (
